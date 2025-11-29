@@ -3,6 +3,33 @@ import './styles/FileUpload.css';
 
 interface FileUploadProps { }
 
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    LineElement,
+    PointElement,
+    ArcElement,
+    Title,
+    Tooltip,
+    Legend,
+} from 'chart.js';
+import { Bar, Line, Pie } from 'react-chartjs-2';
+
+// Register Chart.js components
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    LineElement,
+    PointElement,
+    ArcElement,  // This is needed for Pie charts
+    Title,
+    Tooltip,
+    Legend
+);
+
 const FileUpload: React.FC<FileUploadProps> = () => {
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [uploading, setUploading] = useState(false);
@@ -11,6 +38,7 @@ const FileUpload: React.FC<FileUploadProps> = () => {
     const [outputType, setOutputType] = useState<'chart' | 'general enquiry'>('general enquiry');
     const [chartType, setChartType] = useState<'Bar' | 'Pie' | 'Line' | 'Any'>('Any');
     const [analysisResult, setAnalysisResult] = useState<string>('');
+    const [chartConfig, setChartConfig] = useState<any>(null);
 
     const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
@@ -45,6 +73,7 @@ const FileUpload: React.FC<FileUploadProps> = () => {
         const formData = new FormData();
         formData.append('file', selectedFile);
         formData.append('user_query', userQuery);
+        formData.append('chart_type', chartType);
         formData.append('requested_output_type', outputType === 'chart' ? chartType : outputType);
 
         try {
@@ -57,12 +86,14 @@ const FileUpload: React.FC<FileUploadProps> = () => {
             if (response.ok) {
                 const data = await response.json();
                 setUploadSuccess(true);
-                
+
                 // Store the analysis result if it's a general enquiry
                 if (outputType === 'general enquiry' && data.answer) {
                     setAnalysisResult(data.answer);
+                } else if (outputType === 'chart' && data.answer) {
+                    setChartConfig(data.answer);
                 }
-                
+
                 console.log('File uploaded successfully');
             } else {
                 alert('Upload failed. Please try again.');
@@ -87,6 +118,24 @@ const FileUpload: React.FC<FileUploadProps> = () => {
         setAnalysisResult('');
         setUserQuery('');
     };
+
+    function ChartRenderer({ _chartConfig }: { _chartConfig: any }) {
+        if (!_chartConfig) {
+            return <div>No chart data available</div>;
+        }
+
+        if (_chartConfig.type === 'bar') {
+            return <Bar data={_chartConfig.data} options={_chartConfig.options} />;
+        }
+        if (_chartConfig.type === 'line') {
+            return <Line data={_chartConfig.data} options={_chartConfig.options} />;
+        }
+        if (_chartConfig.type === 'pie') {
+            return <Pie data={_chartConfig.data} options={_chartConfig.options} />;
+        }
+
+        return <div>Unsupported chart type</div>;
+    }
 
     return (
         <div className="file-upload-container">
@@ -262,6 +311,10 @@ const FileUpload: React.FC<FileUploadProps> = () => {
                             Ask Another Question
                         </button>
                     </div>
+                )}
+
+                {uploadSuccess && outputType === 'chart' && chartConfig && (
+                    <ChartRenderer _chartConfig={chartConfig} />
                 )}
 
                 {uploadSuccess && (
