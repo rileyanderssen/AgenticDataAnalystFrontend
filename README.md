@@ -17,7 +17,7 @@
 
 The **Agentic Data Analyst Frontend** provides an intuitive, chat-based interface for interacting with your data. Built with React and Vite, this modern web application allows users to upload datasets, ask questions in natural language, and visualize insights — all through a clean, responsive UI.
 
-This frontend connects seamlessly with the [Agentic Data Analyst Backend](https://github.com/yourusername/agentic-data-analyst-backend) to deliver a complete data analysis experience.
+This frontend connects seamlessly with the [Agentic Data Analyst Backend](https://github.com/rileyanderssen/AgenticDataAnalystBackend) to deliver a complete data analysis experience.
 
 ---
 
@@ -45,34 +45,3 @@ This frontend connects seamlessly with the [Agentic Data Analyst Backend](https:
 - Dark mode support
 - Mobile-responsive layout
 - Smooth animations and transitions
-
-### 💾 **Session Management**
-- Persistent conversation history
-- Multiple dataset support
-- Quick dataset switching
-- Auto-save functionality
-
----
-
-## 🛠️ Tech Stack
-
-| Component | Technology |
-|-----------|-----------|
-| **Framework** | React 18+ |
-| **Build Tool** | Vite |
-| **Styling** | Tailwind CSS |
-| **State Management** | React Context / Zustand |
-| **Charts** | Recharts / Chart.js |
-| **HTTP Client** | Axios |
-| **UI Components** | Shadcn/ui |
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 18+ and npm/yarn
-- Backend service running (see [backend repo](https://github.com/yourusername/agentic-data-analyst-backend))
-
-### Installation
-```bash
