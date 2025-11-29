@@ -1,73 +1,78 @@
-# React + TypeScript + Vite
+<p align="center">
+  <h1 align="center">🎨 Agentic Data Analyst - Frontend</h1>
+  <p align="center">
+    Modern React interface for conversational data analysis
+  </p>
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img src="https://img.shields.io/badge/react-18+-61DAFB.svg" alt="React Version">
+  <img src="https://img.shields.io/badge/build-Vite-646CFF.svg" alt="Vite">
+  <img src="https://img.shields.io/badge/styling-TailwindCSS-38B2AC.svg" alt="Tailwind">
+</p>
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📖 Overview
 
-## React Compiler
+The **Agentic Data Analyst Frontend** provides an intuitive, chat-based interface for interacting with your data. Built with React and Vite, this modern web application allows users to upload datasets, ask questions in natural language, and visualize insights — all through a clean, responsive UI.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This frontend connects seamlessly with the [Agentic Data Analyst Backend](https://github.com/yourusername/agentic-data-analyst-backend) to deliver a complete data analysis experience.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 📤 **Drag-and-Drop File Upload**
+- Intuitive file upload interface
+- Support for CSV and Excel files
+- Real-time upload progress and validation feedback
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 💬 **Conversational Interface**
+- Chat-style interaction with your data
+- Natural language query input
+- Contextual conversation history
+- Instant response rendering
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 📊 **Interactive Visualizations**
+- Embedded chart rendering
+- Multiple chart types (bar, line, scatter, heatmap)
+- Responsive and zoomable graphics
+- Export capabilities for charts and data
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🎨 **Modern UI/UX**
+- Clean, minimalist design
+- Dark mode support
+- Mobile-responsive layout
+- Smooth animations and transitions
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 💾 **Session Management**
+- Persistent conversation history
+- Multiple dataset support
+- Quick dataset switching
+- Auto-save functionality
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 🛠️ Tech Stack
+
+| Component | Technology |
+|-----------|-----------|
+| **Framework** | React 18+ |
+| **Build Tool** | Vite |
+| **Styling** | Tailwind CSS |
+| **State Management** | React Context / Zustand |
+| **Charts** | Recharts / Chart.js |
+| **HTTP Client** | Axios |
+| **UI Components** | Shadcn/ui |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ and npm/yarn
+- Backend service running (see [backend repo](https://github.com/yourusername/agentic-data-analyst-backend))
+
+### Installation
+```bash
