@@ -91,6 +91,7 @@ const FileUpload: React.FC<FileUploadProps> = () => {
                 if (outputType === 'general enquiry' && data.answer) {
                     setAnalysisResult(data.answer);
                 } else if (outputType === 'chart' && data.answer) {
+                    console.log(data.answer);
                     setChartConfig(data.answer);
                 }
 
