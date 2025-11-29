@@ -1,0 +1,362 @@
+.file-upload-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+.file-upload-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.file-upload-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1a202c;
+    margin: 0 0 8px 0;
+    text-align: center;
+}
+
+.file-upload-subtitle {
+    color: #718096;
+    text-align: center;
+    margin: 0 0 32px 0;
+    font-size: 14px;
+}
+
+.file-upload-area {
+    border: 2px dashed #cbd5e0;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    transition: all 0.3s ease;
+    background: #f7fafc;
+}
+
+.file-upload-area:hover {
+    border-color: #667eea;
+    background: #edf2f7;
+}
+
+.file-upload-input-label {
+    cursor: pointer;
+    display: block;
+}
+
+.file-upload-input {
+    display: none;
+}
+
+.file-upload-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.file-upload-icon {
+    width: 48px;
+    height: 48px;
+    color: #667eea;
+}
+
+.file-upload-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.file-upload-subtext {
+    font-size: 14px;
+    color: #718096;
+}
+
+.file-upload-preview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.file-upload-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.file-upload-file-icon {
+    width: 40px;
+    height: 40px;
+    color: #667eea;
+    flex-shrink: 0;
+}
+
+.file-upload-details {
+    text-align: left;
+}
+
+.file-upload-name {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+    word-break: break-all;
+}
+
+.file-upload-size {
+    margin: 4px 0 0 0;
+    font-size: 12px;
+    color: #718096;
+}
+
+.file-upload-remove-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-upload-remove-button:hover {
+    background: #fee;
+}
+
+.file-upload-remove-icon {
+    width: 20px;
+    height: 20px;
+    color: #e53e3e;
+}
+
+.file-upload-query-section {
+    margin-top: 24px;
+}
+
+.file-upload-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 8px;
+}
+
+.file-upload-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #2d3748;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+    font-family: inherit;
+}
+
+.file-upload-textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.file-upload-textarea::placeholder {
+    color: #a0aec0;
+}
+
+.file-upload-output-section {
+    margin-top: 20px;
+}
+
+.file-upload-radio-group {
+    display: flex;
+    gap: 16px;
+}
+
+.file-upload-radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #2d3748;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.file-upload-radio-label:hover {
+    background: #f7fafc;
+}
+
+.file-upload-radio {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    accent-color: #667eea;
+}
+
+.file-upload-chart-type-section {
+    margin-top: 20px;
+}
+
+.file-upload-chart-type-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.file-upload-chart-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #f7fafc;
+}
+
+.file-upload-chart-option:hover {
+    border-color: #667eea;
+    background: #edf2f7;
+}
+
+.file-upload-chart-option.selected {
+    border-color: #667eea;
+    background: #e6efff;
+}
+
+.file-upload-chart-radio {
+    display: none;
+}
+
+.file-upload-chart-icon {
+    width: 32px;
+    height: 32px;
+    color: #667eea;
+    margin-bottom: 8px;
+}
+
+.file-upload-chart-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.file-upload-button {
+    width: 100%;
+    margin-top: 24px;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.file-upload-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+.file-upload-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.file-upload-success-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+    padding: 16px;
+    background: #c6f6d5;
+    border-radius: 8px;
+    color: #22543d;
+    font-weight: 600;
+}
+
+.file-upload-success-icon {
+    width: 24px;
+    height: 24px;
+    color: #22543d;
+}
+
+.file-upload-result-section {
+    margin-top: 24px;
+    padding: 20px;
+    background: #f7fafc;
+    border-radius: 12px;
+    border: 2px solid #e2e8f0;
+}
+
+.file-upload-result-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.file-upload-result-icon {
+    width: 24px;
+    height: 24px;
+    color: #667eea;
+}
+
+.file-upload-result-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.file-upload-result-content {
+    padding: 16px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    color: #2d3748;
+    font-size: 14px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.file-upload-new-query-button {
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px 20px;
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.file-upload-new-query-button:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-1px);
+}
